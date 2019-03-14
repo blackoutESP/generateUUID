@@ -4,9 +4,13 @@ let generateButton = document.querySelector('#generate');
 generateButton.addEventListener('click', (e)=>{
     e.preventDefault();
     area.innerHTML = '';
-    console.log(generateUUID());
+    //console.log(generateUUID());
     let uuid = generateUUID();
     area.innerHTML = uuid;
+    console.log('eval:');
+    if(eval(generateUUID) !== undefined){
+        console.log(generateUUID());
+    }
 });
 
 const generateUUID = ()=>{
@@ -19,3 +23,4 @@ const generateUUID = ()=>{
     });
     return uuid;
 };
+
