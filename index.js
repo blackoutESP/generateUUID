@@ -15,7 +15,7 @@ const generateUUID = ()=>{
     let uuid = '2xxxxxxx-0xxx-4xxxxxxx-yxxx-1xxxxxxx'.replace(/[xy]/g, (v)=>{
         let reg = (dateTime + Math.random()*32)%32 | 0;
         dateTime = Math.floor(dateTime/32);
-        return (v==='x' ? reg: (reg&0x2|0x3|0x5|0x8).toString(32));
+        return (v==='x' ? reg: (reg&0x2|0x3|0x5|0x8)).toString(32);
     });
     return uuid;
 };
