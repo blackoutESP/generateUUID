@@ -14,13 +14,11 @@ generateButton.addEventListener('click', (e)=>{
 });
 
 const generateUUID = ()=>{
-    // 'xxxxxxxx-xxxx-4xxxxxxx-yxxx-xxxxxxxx'
-    let dateTime = new Date().getTime();
-    let uuid = '2xxxxxxx-0xxx-4xxxxxxx-yxxx-1xxxxxxx'.replace(/[xy]/g, (v)=>{
-        let reg = (dateTime + Math.random()*32)%32 | 0;
-        dateTime = Math.floor(dateTime/32);
-        return (v==='x' ? reg: (reg&0x2|0x3|0x5|0x8)).toString(32);
+    let date = new Date().getTime();
+    let uuid = 'xxxxxxxx-yxxx-4xxxxxxx-xxxxx-xxxxxxxx'.replace(/[xy]/g, function(u){
+        let reg = (date + Math.random()*32)%32 | 0;
+        date = Math.floor(date/32);
+        return (u === 'x' ? reg: (reg&0x3|0x8)).toString(32);
     });
     return uuid;
 };
-
